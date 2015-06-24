@@ -36,7 +36,7 @@ class vmwaretools::timesync {
   exec { "vmwaretools_timesync_${cmd_action}":
     command => "/usr/bin/vmware-toolbox-cmd timesync ${cmd_action}",
     onlyif  => "/usr/bin/vmware-toolbox-cmd timesync status | grep ${cmd_grep}",
-    require => Class['vmwaretools::install::exec'],
+    require => Class['vmwaretools::install'],
   }
 
 }
